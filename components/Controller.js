@@ -1,25 +1,22 @@
 import React from "react";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 
-const Controller = ({ randomChoice, setPlayerChoice }) => {
+const Controller = ({ randomChoice, setPlayerChoice, setShowCountdown }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  // const paper = useTransform(x, [-168, 207, 0]);
 
   const checkPosition = (x, y) => {
-    if (x > 400 && x < 600) {
-      if (y > 800 && y < 1000) {
+    // console.log("X: ", x, "Y: ", y);
+    if (y < 850) {
+      setPlayerChoice("rock");
+    } else if (y > 850) {
+      if (x < 750) {
         setPlayerChoice("paper");
-      }
-    } else if (x > 600 && x < 700) {
-      if (y > 300 && y < 500) {
-        setPlayerChoice("rock");
-      }
-    } else if (x > 780 && x < 880) {
-      if (y > 800 && y < 1000) {
+      } else if (x > 750 && x < 1250) {
         setPlayerChoice("scissors");
       }
     }
+    setShowCountdown(true);
   };
 
   return (
@@ -29,9 +26,8 @@ const Controller = ({ randomChoice, setPlayerChoice }) => {
       dragElastic={0.8}
       whileDrag={{ scale: 1.5, opacity: "75%" }}
       style={{ x }}
-      // onDragStart={() => randomChoice()}
-      onDragEnd={(e) => checkPosition(e.x, e.y)}
       onDragStart={() => randomChoice()}
+      onDragEnd={(e) => checkPosition(e.x, e.y)}
     >
       <circle
         cx='50%'
@@ -39,8 +35,8 @@ const Controller = ({ randomChoice, setPlayerChoice }) => {
         r='50'
         fill='#736BFB'
         style={{ cursor: "grab", zIndex: 1000 }}
-        // x={x}
-        // y={y}
+        x={x}
+        y={y}
       />
     </motion.svg>
   );

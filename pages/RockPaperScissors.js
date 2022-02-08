@@ -5,13 +5,18 @@ import Paper from "../components/Paper";
 import Scissors from "../components/Scissors";
 import Controller from "../components/Controller";
 
-const RockPaperScissors = ({ randomChoice, setPlayerChoice }) => {
+const RockPaperScissors = ({
+  randomChoice,
+  setPlayerChoice,
+  setShowCountdown,
+}) => {
   return (
     <Flex h='50vh' flexDir='column' justify='space-evenly' align='center'>
       <Rock />
       <Controller
         randomChoice={randomChoice}
         setPlayerChoice={setPlayerChoice}
+        setShowCountdown={setShowCountdown}
       />
       <Flex flexDir='row' align='center' justify='center'>
         <HStack spacing='12rem'>

@@ -19,8 +19,9 @@ export default function Home() {
     setShowResult(false);
     setBotChoice("");
     setPlayerChoice("");
+    // setPlayerChoice(() => (playerChoice.length ? playerChoice : ""));
     setResult("");
-    setShowCountdown(true);
+    // setShowCountdown(true);
     setTimeout(() => {
       setShowCountdown(false);
       setBotChoice(choices[Math.floor(Math.random() * choices.length)]);
@@ -75,7 +76,7 @@ export default function Home() {
           setTimeout(() => {
             setResult("YOU WIN!");
             setShowResult(true);
-          }, 5000);
+          }, 1000);
           break;
         case "paperscissors":
         case "scissorsrock":
@@ -122,6 +123,7 @@ export default function Home() {
         <RockPaperScissors
           randomChoice={randomChoice}
           setPlayerChoice={setPlayerChoice}
+          setShowCountdown={setShowCountdown}
         />
       </Flex>
     </>
