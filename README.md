@@ -1,1 +1,1 @@
-This is a "rock, paper, scissors" game I am building in order to test various 'drag amd drop' tools built for react. I even can make it work sometimes!
+This is a "rock, paper, scissors" game I am building in order to test various 'drag amd drop' tools built for react. I definitely don't follow all the best practices (some prop drilling, etc.) but this is more for fun than anything. Enjoy!
