@@ -1,11 +1,8 @@
 import React from "react";
+import { Heading } from "@chakra-ui/react";
 
 const Rock = () => {
-  return (
-    <div style={{ userSelect: "none", padding: "7px" }}>
-      <h1 style={{ userSelect: "none" }}>Rock</h1>
-    </div>
-  );
+  return <Heading style={{ userSelect: "none" }}>Rock</Heading>;
 };
 
 export default Rock;

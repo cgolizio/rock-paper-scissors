@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { Flex, Heading } from "@chakra-ui/react";
+import { Heading, Box } from "@chakra-ui/react";
 
 const ResultBanner = ({ result }) => {
   const [bannerColor, setBannerColor] = useState("slategray");
 
   useEffect(() => {
+    console.log("BANNER COLOR: ", bannerColor);
+  }, [bannerColor]);
+
+  useEffect(() => {
     switch (result) {
-      case "YOU WIN!":
-        setBannerColor("#0fa");
+      case "Nice job, you won /s. RPS bot literally hates you now.":
+        setBannerColor("green.300");
         break;
-      case "You LOSE. Shame, shame...":
-        setBannerColor("crimson");
+      case "YOU LOOOOOOSSSSSEEE **super loud buzzer noise**":
+        setBannerColor("red.600");
         break;
       case "Its a draw!":
       default:
@@ -20,17 +24,11 @@ const ResultBanner = ({ result }) => {
   }, [result]);
 
   return (
-    <Flex
-      w='100vw'
-      bg={bannerColor}
-      marginTop='40px'
-      align='center'
-      justify='center'
-    >
-      <Heading fontSize='4rem' color='ghostwhite'>
+    <Box h='100vh' w='100vw' bg={bannerColor} textAlign='center'>
+      <Heading fontSize='4rem' color='ghostwhite' p={100}>
         {result}
       </Heading>
-    </Flex>
+    </Box>
   );
 };
 

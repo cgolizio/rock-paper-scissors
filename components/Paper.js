@@ -1,11 +1,8 @@
 import React from "react";
+import { Heading } from "@chakra-ui/react";
 
 const Paper = () => {
-  return (
-    <div style={{ userSelect: "none", padding: "7px" }}>
-      <h1 style={{ userSelect: "none" }}>Paper</h1>
-    </div>
-  );
+  return <Heading style={{ userSelect: "none" }}>Paper</Heading>;
 };
 
 export default Paper;

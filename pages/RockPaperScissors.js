@@ -8,7 +8,9 @@ import Controller from "../components/Controller";
 const RockPaperScissors = ({
   randomChoice,
   setPlayerChoice,
+  playerChoice,
   setShowCountdown,
+  showResult,
 }) => {
   return (
     <Flex h='50vh' flexDir='column' justify='space-evenly' align='center'>
@@ -16,7 +18,9 @@ const RockPaperScissors = ({
       <Controller
         randomChoice={randomChoice}
         setPlayerChoice={setPlayerChoice}
+        playerChoice={playerChoice}
         setShowCountdown={setShowCountdown}
+        showResult={showResult}
       />
       <Flex flexDir='row' align='center' justify='center'>
         <HStack spacing='12rem'>

@@ -1,11 +1,8 @@
 import React from "react";
+import { Heading } from "@chakra-ui/react";
 
 const Scissors = () => {
-  return (
-    <div style={{ userSelect: "none", padding: "7px" }}>
-      <h1>Scissors</h1>
-    </div>
-  );
+  return <Heading style={{ userSelect: "none" }}>Scissors</Heading>;
 };
 
 export default Scissors;
